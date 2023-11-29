@@ -118,6 +118,7 @@ module ActiveRecord
       }.freeze
 
       include Clickhouse::SchemaStatements
+      include Clickhouse::DatabaseStatements
 
       # Initializes and connects a Clickhouse adapter.
       def initialize(logger, connection_parameters, config, full_config)
