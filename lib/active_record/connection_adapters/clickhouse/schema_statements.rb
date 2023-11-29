@@ -137,7 +137,7 @@ module ActiveRecord
           Clickhouse::TableDefinition.new(self, table_name, **options)
         end
 
-        def new_column_from_field(table_name, field)
+        def new_column_from_field(table_name, field, _dimensions)
           sql_type = field[1]
           type_metadata = fetch_type_metadata(sql_type)
           default = field[3]
