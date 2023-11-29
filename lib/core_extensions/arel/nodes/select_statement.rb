@@ -4,7 +4,7 @@ module CoreExtensions
       module SelectStatement
         attr_accessor :settings
 
-        def initialize
+        def initialize(table=nil)
           super
           @settings = nil
         end
