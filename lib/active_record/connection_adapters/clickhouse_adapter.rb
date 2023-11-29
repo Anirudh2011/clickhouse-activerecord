@@ -455,6 +455,12 @@ module ActiveRecord
         @connection
       end
 
+      def reconnect
+        @connection&.close
+        @connection = nil
+        connect
+      end
+
       def apply_replica(table, options)
         if use_replica? && options[:options]
           if options[:options].match(/^Replicated/)
